@@ -1,0 +1,103 @@
+node_types:
+  paper:
+    properties:
+      - id  # DOI or arxiv ID
+      - title
+      - abstract
+      - authors
+      - year
+      - venue
+      - url
+      - keywords
+    color: "#FF6B6B"
+  
+  github_repo:
+    properties:
+      - id  # repo full name (owner/repo)
+      - name
+      - description
+      - language
+      - topics
+      - stars
+      - created_at
+      - updated_at
+      - url
+    color: "#4ECDC4"
+  
+  note:
+    properties:
+      - id  # filename or uuid
+      - title
+      - content
+      - created_at
+      - updated_at
+      - tags
+      - file_path
+    color: "#95E1D3"
+  
+  concept:
+    properties:
+      - id  # normalized concept name
+      - name
+      - category  # e.g., technology, method, domain
+      - frequency  # how often it appears
+    color: "#F38181"
+  
+  person:
+    properties:
+      - id  # name or identifier
+      - name
+      - affiliation
+      - role  # author, collaborator, etc.
+    color: "#AA96DA"
+
+relationship_types:
+  - name: CITES
+    from: [paper]
+    to: [paper]
+    properties: []
+  
+  - name: IMPLEMENTS
+    from: [github_repo]
+    to: [paper, concept]
+    properties: []
+  
+  - name: MENTIONS
+    from: [paper, github_repo, note]
+    to: [concept]
+    properties: [confidence]
+  
+  - name: RELATES_TO
+    from: [paper, github_repo, note]
+    to: [paper, github_repo, note]
+    properties: [similarity_score, method]
+  
+  - name: INSPIRED_BY
+    from: [github_repo, note, paper]
+    to: [paper, github_repo, note]
+    properties: [description]
+  
+  - name: AUTHORED_BY
+    from: [paper, github_repo]
+    to: [person]
+    properties: []
+  
+  - name: DEPENDS_ON
+    from: [github_repo]
+    to: [github_repo]
+    properties: [dependency_type]
+  
+  - name: REFERENCES
+    from: [note]
+    to: [paper, github_repo, note]
+    properties: []
+  
+  - name: USES_TECHNOLOGY
+    from: [github_repo, paper]
+    to: [concept]
+    properties: []
+
+embedding_config:
+  model: "sentence-transformers/all-MiniLM-L6-v2"
+  similarity_threshold: 0.7
+  batch_size: 32

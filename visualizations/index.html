@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marc Clos-Garcia — Research Knowledge Graph</title>
+  <meta name="description" content="Interactive knowledge graph of publications, methods, and collaborators in metabolomics, multi-omics, microbiome, and biomarker discovery.">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #161922;
+      --fg: #e7ecf3;
+      --muted: #9aa3b2;
+      --accent: #4ecdc4;
+      --border: #262b36;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.55;
+    }
+    header {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 24px 24px;
+    }
+    h1 { font-size: 2rem; margin: 0 0 8px; }
+    h2 { font-size: 1.1rem; margin: 28px 0 10px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+    p.lead { color: var(--muted); margin: 0 0 24px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    main { max-width: 960px; margin: 0 auto; padding: 0 24px 56px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .card p { margin: 0 0 12px; color: var(--muted); font-size: 0.95rem; }
+    .card a.btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: var(--accent);
+      color: #0f1115;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .card a.btn:hover { text-decoration: none; filter: brightness(1.1); }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 24px 0;
+    }
+    .stat strong { display: block; font-size: 1.5rem; color: var(--fg); }
+    .stat span { color: var(--muted); font-size: 0.85rem; }
+
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Marc Clos-Garcia</h1>
+    <p class="lead">
+      Biomedical researcher — metabolomics, multi-omics integration,
+      microbiome, biomarker discovery.
+      <a href="https://github.com/pxtm">github.com/pxtm</a>
+    </p>
+
+    <div class="stats">
+      <div class="stat"><strong>16</strong><span>publications</span></div>
+      <div class="stat"><strong>5+</strong><span>public repos</span></div>
+      <div class="stat"><strong>2018–2026</strong><span>publication span</span></div>
+    </div>
+  </header>
+
+  <main>
+    <h2>Interactive views</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Knowledge graph</h3>
+        <p>Full graph: papers, repos, authors, methods, concepts. Hover nodes for detail; drag to explore clusters.</p>
+        <a class="btn" href="knowledge_graph.html">Open graph</a>
+      </div>
+      <div class="card">
+        <h3>Expertise map</h3>
+        <p>Topic-centric view — methodologies, diseases, biological themes, and the papers that anchor each area.</p>
+        <a class="btn" href="expertise_map.html">Open map</a>
+      </div>
+    </div>
+
+    <h2>Core areas</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Methodologies</h3>
+        <p>Proteomics, LC-MS/MS, Olink, UPLC-MS, shotgun metagenomics, multi-omics integration.</p>
+      </div>
+      <div class="card">
+        <h3>Disease focus</h3>
+        <p>Colorectal cancer, prostate cancer, type 1 &amp; 2 diabetes, diabetic kidney disease, fibromyalgia, liver disease.</p>
+      </div>
+      <div class="card">
+        <h3>Biological themes</h3>
+        <p>Biomarker discovery, lipid metabolism, extracellular vesicles, gut microbiota, insulin signaling.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Generated from <a href="https://github.com/pxtm/myKG_expanded">pxtm/myKG_expanded</a> —
+    a Neo4j-backed personal research knowledge graph.
+  </footer>
+</body>
+</html>
