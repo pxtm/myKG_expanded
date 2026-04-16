@@ -231,7 +231,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    load_dotenv(PROJECT_ROOT / ".env")
+    load_dotenv(PROJECT_ROOT / ".env", override=True)
 
     logger.info("Scanning wiki pages...")
     wiki_state = scan_wiki()

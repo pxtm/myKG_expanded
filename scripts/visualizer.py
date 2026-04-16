@@ -599,8 +599,8 @@ if __name__ == "__main__":
     from dotenv import load_dotenv
     import os
     
-    load_dotenv()
-    
+    load_dotenv(override=True)
+
     kg = KnowledgeGraph(
         uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
         user=os.getenv("NEO4J_USER", "neo4j"),

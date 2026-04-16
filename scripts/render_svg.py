@@ -118,7 +118,7 @@ def fetch_from_neo4j() -> Tuple[List[dict], List[dict]]:
     sys.path.insert(0, str(Path(__file__).parent))
     from graph_db import KnowledgeGraph
 
-    load_dotenv(PROJECT_ROOT / ".env")
+    load_dotenv(PROJECT_ROOT / ".env", override=True)
     kg = KnowledgeGraph(
         uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
         user=os.getenv("NEO4J_USER", "neo4j"),

@@ -18,7 +18,7 @@ import os
 from collections import defaultdict
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 sys.path.insert(0, "scripts")
 from graph_db import KnowledgeGraph
 

@@ -33,7 +33,7 @@ from graph_db import KnowledgeGraph
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env", override=True)
 
 # ── Research Topic Definitions ────────────────────────────────────────────
 # Each topic has a list of keywords that trigger a match.

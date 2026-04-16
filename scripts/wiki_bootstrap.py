@@ -737,7 +737,7 @@ def main():
     parser.add_argument("--force", action="store_true", help="Overwrite existing pages")
     args = parser.parse_args()
 
-    load_dotenv(PROJECT_ROOT / ".env")
+    load_dotenv(PROJECT_ROOT / ".env", override=True)
 
     # Load JSON data
     with open(DATA_DIR / "papers.json", encoding="utf-8") as f:

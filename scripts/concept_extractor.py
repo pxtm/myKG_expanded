@@ -33,7 +33,7 @@ from semantic_analyzer import SemanticAnalyzer
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env", override=True)
 
 SIMILARITY_THRESHOLD = 0.60   # cosine similarity for RELATES_TO edges
 

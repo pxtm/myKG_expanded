@@ -34,7 +34,7 @@ class KnowledgeGraphBuilder:
     
     def __init__(self, config_path: str = ".env"):
         """Initialize the builder with configuration."""
-        load_dotenv(config_path)
+        load_dotenv(config_path, override=True)
         
         self.neo4j_uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
         self.neo4j_user = os.getenv("NEO4J_USER", "neo4j")

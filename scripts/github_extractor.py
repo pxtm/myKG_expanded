@@ -168,8 +168,8 @@ if __name__ == "__main__":
     from dotenv import load_dotenv
     import os
     
-    load_dotenv()
-    
+    load_dotenv(override=True)
+
     token = os.getenv("GITHUB_TOKEN")
     username = os.getenv("GITHUB_USERNAME")
     

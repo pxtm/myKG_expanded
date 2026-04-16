@@ -36,7 +36,7 @@ from topic_tagger import TOPICS, TOPIC_DISPLAY_NAMES, score_topics
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env", override=True)
 
 PDF_DIR  = Path(__file__).parent.parent / "data" / "pdfs"
 DATA_DIR = Path(__file__).parent.parent / "data"

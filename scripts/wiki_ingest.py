@@ -239,7 +239,7 @@ def main():
     parser.add_argument("--id", help="Specific paper/repo ID to ingest")
     args = parser.parse_args()
 
-    load_dotenv(PROJECT_ROOT / ".env")
+    load_dotenv(PROJECT_ROOT / ".env", override=True)
 
     kg = KnowledgeGraph(
         uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
