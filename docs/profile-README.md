@@ -17,7 +17,7 @@ type 1/2 diabetes, fibromyalgia, and liver disease.
 Everything I've published, the methods I use, and how it all connects —
 rendered as an interactive graph.
 
-[![knowledge graph preview](preview.png)](https://pxtm.github.io/myKG_expanded/)
+[![knowledge graph preview](https://pxtm.github.io/myKG_expanded/knowledge_graph.png)](https://pxtm.github.io/myKG_expanded/)
 
 **→ [Explore the interactive graph](https://pxtm.github.io/myKG_expanded/)**
 
